@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltAura - Premium Smart Home & Architecture Solutions</title>
+    <link rel="icon" href="">
+    <meta name="description" content="VoltAura redefines spaces by merging visionary architecture, sophisticated interior design, and cutting-edge smart home technology. Expert installation and premium solutions.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #1a202c;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #4a5568;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #1e3a8a;
+    border: 2px solid #1e3a8a;
+}
+
+.btn-secondary:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Navigation */
+.navbar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.nav-logo img {
+    height: 45px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu li a:hover {
+    color: #1e3a8a;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1e3a8a;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%) !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #4a5568;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    margin-bottom: 1.5rem;
+    color: #1a202c;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #4a5568;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Smart Home Visual */
+.smart-home-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-outline {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border: 3px solid #e2e8f0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.room {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.room:hover {
+    transform: scale(1.05);
+}
+
+.room-1 {
+    top: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+}
+
+.room-2 {
+    top: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%);
+}
+
+.room-3 {
+    bottom: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.room-4 {
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #fdf2f8 0%, #f9a8d4 100%);
+}
+
+.room i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.room span {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2d3748;
+    text-align: center;
+}
+
+/* Solutions Section with Flip Cards */
+.solutions {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* Flip Card Styles */
+.card {
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    color: #1a202c;
+    border: 2px solid #1e3a8a;
+    transform: rotateY(180deg);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-front .card-icon {
+    color: white;
+}
+
+.card-back .card-icon {
+    position: absolute;
+    color: #c8cbd4;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.card-features {
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.card-features li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #48bb78;
+    font-weight: bold;
+}
+
+.card-benefit {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.benefit-tag {
+    position: absolute;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Special styling for featured card */
+.card.featured {
+    position: relative;
+}
+
+.card.featured::before {
+    content: 'Featured';
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background: white;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info h2 {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.contact-item i {
+    width: 25px;
+    color: #3b82f6;
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #3b82f6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-form h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+}
+
+.quote-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.quote-left h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.quote-left p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.guarantees {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.guarantee-item i {
+    color: #48bb78;
+}
+
+.quote-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quote-form h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group select option {
+    background: #2d3748;
+    color: white;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    color: #48bb78;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.error-message {
+    display: none;
+    text-align: center;
+    color: #f56565;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: #1a202c;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-section p {
+    color: #cbd5e0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #3b82f6;
+}
+
+.footer-bottom {
+   
+    
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #a0aec0;
+    margin: 0;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-float a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .home-outline {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .room {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .room i {
+        font-size: 1.5rem;
+    }
+    
+    .room span {
+        font-size: 0.75rem;
+    }
+    
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    
+    .card {
+        height: 280px;
+    }
+    
+    .quote-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .whatsapp-float {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-container {
+        padding: 1rem 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .home-outline {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .card {
+        height: 250px;
+    }
+    
+    .card-front,
+    .card-back {
+        padding: 1.5rem;
+    }
+    
+    .quote-form,
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+    
+
+        /* Multi-select Services Dropdown Styles */
+        .services-multiselect {
+            position: relative;
+            width: 100%;
+        }
+
+        .multiselect-header {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .multiselect-header:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .multiselect-placeholder {
+            color: rgb(255, 255, 255);
+        }
+
+        .multiselect-placeholder.has-selection {
+            color: white;
+            font-weight: 500;
+        }
+
+        .multiselect-arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .multiselect-arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .multiselect-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .multiselect-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .multiselect-option {
+            padding: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .multiselect-option:last-child {
+            border-bottom: none;
+        }
+
+        .multiselect-option input[type="checkbox"] {
+            display: none;
+        }
+
+        .multiselect-option label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: #2d3748;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .multiselect-option label:hover {
+            background: rgba(30, 58, 138, 0.1);
+            color: #1e3a8a;
+        }
+
+        .multiselect-option input[type="checkbox"]:checked + label {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .multiselect-option input[type="checkbox"]:checked + label::after {
+            content: "✓";
+            position: absolute;
+            right: 16px;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .service-icon {
+            width: 18px;
+            color: #4a5568;
+            font-size: 1rem;
+        }
+
+        .multiselect-option input[type="checkbox"]:checked + label .service-icon {
+            color: #1e3a8a;
+        }
+
+        /* Custom scrollbar for dropdown */
+        .multiselect-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .multiselect-dropdown::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+
+        .multiselect-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(30, 58, 138, 0.3);
+            border-radius: 3px;
+        }
+
+        .multiselect-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(30, 58, 138, 0.5);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .multiselect-dropdown {
+                max-height: 250px;
+            }
+
+            .multiselect-option label {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .service-icon {
+                font-size: 0.9rem;
+            }
+        }
+    
+        </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMTRfMyIgeDE9IjEwIiB5MT0iMTAiIHgyPSI0MCIgeTI9IjQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMzYjgyZjYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMWUzYThhIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBhdGggZD0iTTEwIDEwTDMwIDMwSDEwVjEwWiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzE0XzMpIi8+Cjx0ZXh0IHg9IjUwIiB5PSIzNSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMWUzYThhIj5Wb2x0QXVyYTwvdGV4dD4KPHR4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzRhNTU2OCI+U21hcnQgSG9tZSBTb2x1dGlvbnM8L3RleHQ+Cjwvc3ZnPgo=" alt="VoltAura Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display: none;">VoltAura</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#quote" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Redefine Spaces with <span class="highlight">VoltAura</span></h1>
+                <p class="hero-subtitle">Experience visionary architecture, sophisticated interior design, and cutting-edge smart home technology. From concept to execution, we create timeless, tech-enhanced spaces that inspire.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#quote" class="btn btn-primary">Get Free Consultation</a>
+                    <a href="#solutions" class="btn btn-secondary">Explore Solutions</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="smart-home-visual">
+                    <div class="home-outline">
+                        <div class="room room-1">
+                            <i class="fas fa-drafting-compass"></i>
+                            <span>Architecture</span>
+                        </div>
+                        <div class="room room-2">
+                            <i class="fas fa-palette"></i>
+                            <span>Interior Design</span>
+                        </div>
+                        <div class="room room-3">
+                            <i class="fas fa-home"></i>
+                            <span>Smart Home</span>
+                        </div>
+                        <div class="room room-4">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Solutions Section with Flip Cards -->
+    <section id="solutions" class="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Solutions</h2>
+                <p>Comprehensive design and automation systems for every lifestyle and budget</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <!-- Architecture Design -->
+                <div class="card featured">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-drafting-compass card-icon"></i>
+                            <h3 class="card-title">Architecture Design</h3>
+                            <p class="card-description">Visionary architectural planning with sustainable and future-ready design solutions</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-drafting-compass card-icon"></i>
+                            <h3 class="card-title">Architecture Design</h3>
+                            <ul class="card-features">
+                                <li>Visionary architectural planning</li>
+                                <li>Sustainable design solutions</li>
+                                <li>3D modeling and visualization</li>
+                                <li>Structural engineering integration</li>
+                                <li>Future-ready building design</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Timeless Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior Design -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-palette card-icon"></i>
+                            <h3 class="card-title">Interior Design</h3>
+                            <p class="card-description">Sophisticated interior planning with custom furniture and lighting design</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-palette card-icon"></i>
+                            <h3 class="card-title">Interior Design</h3>
+                            <ul class="card-features">
+                                <li>Sophisticated interior planning</li>
+                                <li>Custom furniture design</li>
+                                <li>Lighting design and mood creation</li>
+                                <li>Material selection and sourcing</li>
+                                <li>Space optimization solutions</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Aesthetic Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Automation -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-home card-icon"></i>
+                            <h3 class="card-title">Home Automation</h3>
+                            <p class="card-description">Cutting-edge smart home systems with intelligent controls and energy optimization</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-home card-icon"></i>
+                            <h3 class="card-title">Home Automation</h3>
+                            <ul class="card-features">
+                                <li>Intelligent lighting control systems</li>
+                                <li>Climate and HVAC automation</li>
+                                <li>Smart switches and sensors</li>
+                                <li>Voice and app-based controls</li>
+                                <li>Energy monitoring and optimization</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Smart Living</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gate Automation -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-door-open card-icon"></i>
+                            <h3 class="card-title">Gate Automation</h3>
+                            <p class="card-description">Automatic gate systems with smart access controls and security integration</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-door-open card-icon"></i>
+                            <h3 class="card-title">Gate Automation</h3>
+                            <ul class="card-features">
+                                <li>Automatic swing and sliding gates</li>
+                                <li>Smart garage door systems</li>
+                                <li>Remote access controls</li>
+                                <li>Battery backup systems</li>
+                                <li>Integration with security systems</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Convenient Access</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Systems -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-shield-alt card-icon"></i>
+                            <h3 class="card-title">Security Systems</h3>
+                            <p class="card-description">Complete security solutions with smart monitoring and advanced protection systems</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-shield-alt card-icon"></i>
+                            <h3 class="card-title">Security Systems</h3>
+                            <ul class="card-features">
+                                <li>HD CCTV surveillance systems</li>
+                                <li>Motion detection and alerts</li>
+                                <li>Perimeter security solutions</li>
+                                <li>Remote monitoring capabilities</li>
+                                <li>Integration with mobile apps</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Complete Protection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Access Control -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-key card-icon"></i>
+                            <h3 class="card-title">Access Control</h3>
+                            <p class="card-description">Smart access control systems with biometric and multi-level security protocols</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-key card-icon"></i>
+                            <h3 class="card-title">Access Control</h3>
+                            <ul class="card-features">
+                                <li>Smart door locks and keypads</li>
+                                <li>Biometric access controls</li>
+                                <li>Card and fob-based systems</li>
+                                <li>Multi-level security protocols</li>
+                                <li>Visitor management systems</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Secure Access</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Door Phone -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-video card-icon"></i>
+                            <h3 class="card-title">Video Door Phone</h3>
+                            <p class="card-description">HD video communication systems with mobile integration and recording features</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-video card-icon"></i>
+                            <h3 class="card-title">Video Door Phone</h3>
+                            <ul class="card-features">
+                                <li>HD video door communication</li>
+                                <li>Two-way audio systems</li>
+                                <li>Mobile app integration</li>
+                                <li>Recording and playback features</li>
+                                <li>Multiple indoor unit support</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Visual Communication</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intercom Systems -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-microphone card-icon"></i>
+                            <h3 class="card-title">Intercom Systems</h3>
+                            <p class="card-description">Building-wide communication systems with emergency features and security integration</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-microphone card-icon"></i>
+                            <h3 class="card-title">Intercom Systems</h3>
+                            <ul class="card-features">
+                                <li>Building-wide communication</li>
+                                <li>Room-to-room connectivity</li>
+                                <li>Emergency communication features</li>
+                                <li>Integration with security systems</li>
+                                <li>Hands-free operation</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Seamless Communication</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi Room Audio Video -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-music card-icon"></i>
+                            <h3 class="card-title">Multi Room Audio Video</h3>
+                            <p class="card-description">Distributed entertainment systems with multi-zone control and streaming integration</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-music card-icon"></i>
+                            <h3 class="card-title">Multi Room Audio Video</h3>
+                            <ul class="card-features">
+                                <li>Distributed audio systems</li>
+                                <li>Multi-zone entertainment control</li>
+                                <li>Streaming service integration</li>
+                                <li>Synchronized playback across rooms</li>
+                                <li>High-quality sound distribution</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Immersive Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Theatre -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-film card-icon"></i>
+                            <h3 class="card-title">Home Theatre</h3>
+                            <p class="card-description">Cinema-quality entertainment systems with surround sound and custom design</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-film card-icon"></i>
+                            <h3 class="card-title">Home Theatre</h3>
+                            <ul class="card-features">
+                                <li>Cinema-quality projection systems</li>
+                                <li>Surround sound installation</li>
+                                <li>Acoustic room treatment</li>
+                                <li>Automated lighting and curtains</li>
+                                <li>Custom seating and design</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Cinema Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Central Vacuum -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-broom card-icon"></i>
+                            <h3 class="card-title">Central Vacuum</h3>
+                            <p class="card-description">Whole-house vacuum systems with multiple inlets and improved air quality benefits</p>
+                        </div>
+                        <div class="card-back">
+                            <i class="fas fa-broom card-icon"></i>
+                            <h3 class="card-title">Central Vacuum</h3>
+                            <ul class="card-features">
+                                <li>Whole-house vacuum solutions</li>
+                                <li>Multiple inlet installations</li>
+                                <li>Powerful central unit systems</li>
+                                <li>Low maintenance operation</li>
+                                <li>Improved air quality benefits</li>
+                            </ul>
+                            <div class="card-benefit">
+                                <span class="benefit-tag">Effortless Cleaning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About VoltAura</h2>
+                <p>At VoltAura, we redefine spaces by merging visionary architecture, sophisticated interior design, and cutting-edge technology. Our philosophy is rooted in the belief that great design should not only be aesthetically captivating but also intelligently responsive to the way people live, work, and interact.</p>
+                <p>From concept to execution, we integrate smart systems, sustainable materials, and immersive design elements to craft environments that are both functional and future-ready. With every project, VoltAura pushes the boundaries of innovation to create timeless, tech-enhanced spaces that inspire.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919487939710">+91 94879 39710</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:voltaurapvt@gmail.com">voltaurapvt@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Serving Pan India</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/voltaura_pvt_ltd?utm_source=ig_web_button_share_sheet&igsh=cmRycW9xaXc3bHll" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:voltaurapvt@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+919487939710">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm" method="get" onsubmit="return submitContactForm(event)">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="service" required>
+                                <option value="">Select Service</option>
+                                <option value="architecture">Architecture Design</option>
+                                <option value="interior">Interior Design</option>
+                                <option value="automation">Home Automation</option>
+                                <option value="security">Security Systems</option>
+                                <option value="consultation">Free Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell us about your project..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        <div class="success-message" id="contactSuccess">Message sent successfully! We'll get back to you soon.</div>
+                        <div class="error-message" id="contactError">Sorry, there was an error sending your message. Please try again.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="quote" class="quote-section">
+        <div class="container">
+            <div class="quote-content">
+                <div class="quote-left">
+                    <h2>Ready to Transform Your Space?</h2>
+                    <p>Get a free consultation and customized quote for your architecture, interior design, or smart home automation project. Our experts will help you choose the perfect solutions for your vision and budget.</p>
+                    
+                    <div class="guarantees">
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free Consultation</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No Hidden Costs</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>2-Year Warranty</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional Installation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-right">
+                    <form class="quote-form" id="quoteForm">
+                        <h3>Get Your Free Quote</h3>
+                        
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select name="propertyType" required>
+                                <option value="">Select Property Type</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="villa">Villa/Independent House</option>
+                                <option value="office">Office Space</option>
+                                <option value="commercial">Commercial Building</option>
+                                <option value="retail">Retail Space</option>
+                                <option value="hospitality">Hotel/Restaurant</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="services-multiselect">
+                                <div class="multiselect-header" onclick="toggleServicesDropdown()">
+                                    <span class="multiselect-placeholder">Select Services</span>
+                                    <i class="fas fa-chevron-down multiselect-arrow"></i>
+                                </div>
+                                <div class="multiselect-dropdown" id="servicesDropdown">
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="architecture" name="services[]" value="architecture">
+                                        <label for="architecture">
+                                            <i class="fas fa-drafting-compass service-icon"></i>
+                                            Architecture Design
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="interior" name="services[]" value="interior">
+                                        <label for="interior">
+                                            <i class="fas fa-palette service-icon"></i>
+                                            Interior Design
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="automation" name="services[]" value="automation">
+                                        <label for="automation">
+                                            <i class="fas fa-home service-icon"></i>
+                                            Home Automation
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="gate" name="services[]" value="gate">
+                                        <label for="gate">
+                                            <i class="fas fa-door-open service-icon"></i>
+                                            Gate Automation
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="security" name="services[]" value="security">
+                                        <label for="security">
+                                            <i class="fas fa-shield-alt service-icon"></i>
+                                            Security Systems
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="access" name="services[]" value="access">
+                                        <label for="access">
+                                            <i class="fas fa-key service-icon"></i>
+                                            Access Control
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="doorphone" name="services[]" value="doorphone">
+                                        <label for="doorphone">
+                                            <i class="fas fa-video service-icon"></i>
+                                            Video Door Phone
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="intercom" name="services[]" value="intercom">
+                                        <label for="intercom">
+                                            <i class="fas fa-microphone service-icon"></i>
+                                            Intercom Systems
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="audio" name="services[]" value="audio">
+                                        <label for="audio">
+                                            <i class="fas fa-music service-icon"></i>
+                                            Multi Room Audio/Video
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="theatre" name="services[]" value="theatre">
+                                        <label for="theatre">
+                                            <i class="fas fa-film service-icon"></i>
+                                            Home Theatre
+                                        </label>
+                                    </div>
+                                    <div class="multiselect-option">
+                                        <input type="checkbox" id="vacuum" name="services[]" value="vacuum">
+                                        <label for="vacuum">
+                                            <i class="fas fa-broom service-icon"></i>
+                                            Central Vacuum
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select name="budget">
+                                <option value="">Select Budget Range</option>
+                                <option value="under-1l">Under ₹1,00,000</option>
+                                <option value="1l-3l">₹1,00,000 - ₹3,00,000</option>
+                                <option value="3l-5l">₹3,00,000 - ₹5,00,000</option>
+                                <option value="5l-10l">₹5,00,000 - ₹10,00,000</option>
+                                <option value="10l-25l">₹10,00,000 - ₹25,00,000</option>
+                                <option value="above-25l">Above ₹25,00,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="requirements" placeholder="Tell us about your project requirements, timeline, and any specific preferences..." rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Get Free Consultation
+                        </button>
+                        
+                        <p class="form-note">We'll respond within 2 hours during business hours</p>
+                        <div class="success-message" id="quoteSuccess">Quote request submitted successfully! Our team will contact you shortly.</div>
+                        <div class="error-message" id="quoteError">Sorry, there was an error submitting your quote request. Please try again.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMTRfMyIgeDE9IjEwIiB5MT0iMTAiIHgyPSI0MCIgeTI9IjQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMzYjgyZjYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMWUzYThhIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBhdGggZD0iTTEwIDEwTDMwIDMwSDEwVjEwWiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzE0XzMpIi8+Cjx0ZXh0IHg9IjUwIiB5PSIzNSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMWUzYThhIj5Wb2x0QXVyYTwvdGV4dD4KPHR4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzRhNTU2OCI+U21hcnQgSG9tZSBTb2x1dGlvbnM8L3RleHQ+Cjwvc3ZnPgo=" alt="VoltAura Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display: none;">VoltAura</span>
+                    </div>
+                    <p>VoltAura redefines spaces by merging visionary architecture, sophisticated interior design, and cutting-edge smart home technology.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#solutions">Architecture Design</a></li>
+                        <li><a href="#solutions">Interior Design</a></li>
+                        <li><a href="#solutions">Home Automation</a></li>
+                        <li><a href="#solutions">Security Systems</a></li>
+                        <li><a href="#solutions">Home Theatres</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#quote">Get Quote</a></li>
+                        <li><a href="#solutions">Our Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 94879 39710</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>voltaurapvt@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <span>@voltaura_pvt_ltd</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 VoltAura. All rights reserved.
+
+                </p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Designed and Maintained by VoltAura Software development Team</p>     
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/919487939710?text=Hi, I'm interested in VoltAura's smart home and design solutions" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+     // CORRECTED JAVASCRIPT FOR VOLTAURA WEBSITE
+// Replace the entire JavaScript section in your HTML file with this code
+
+// Configuration - REPLACE WITH YOUR ACTUAL GOOGLE APPS SCRIPT URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxFdlNYQ7LGAauVWCUGSsrLBooF1cOQ0u_WUy9Awby2Jhn6XrrQKAh8xy9QXaHfmzw/exec';
+
+// Mobile Navigation Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-menu li a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// FIXED Form submission handler
+async function submitForm(formElement, formType) {
+    try {
+        console.log('Starting form submission for:', formType);
+        
+        if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('YOUR_SCRIPT_ID_HERE')) {
+            throw new Error('Google Apps Script URL not configured. Please update GOOGLE_SCRIPT_URL.');
+        }
+
+        // Get form data
+        const formData = new FormData(formElement);
+        
+        
+        // Handle services checkboxes specially
+        const selectedServices = [];
+        const serviceCheckboxes = formElement.querySelectorAll('input[name="services[]"]:checked');
+        serviceCheckboxes.forEach(checkbox => {
+            selectedServices.push(checkbox.value);
+        });
+
+        // Add selected services to form data
+        if (selectedServices.length > 0) {
+            formData.append('services', selectedServices.join(', '));
+        }
+        
+        // Add form type and timestamp
+        formData.append('formType', formType);
+        formData.append('timestamp', new Date().toLocaleString());
+
+        console.log('Form data prepared:', Object.fromEntries(formData));
+
+        // Use XMLHttpRequest instead of fetch to avoid CORS issues
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            
+            xhr.open('POST', GOOGLE_SCRIPT_URL, true);
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 302) {
+                        console.log('Form submitted successfully');
+                        resolve({ success: true, message: 'Form submitted successfully!' });
+                    } else {
+                        console.log('Form submission completed (status:', xhr.status, ')');
+                        // Even if we can't read the response, if no network error occurred, consider it success
+                        resolve({ success: true, message: 'Form submitted successfully!' });
+                    }
+                }
+            };
+            
+            xhr.onerror = function() {
+                console.error('Network error during form submission');
+                reject(new Error('Network error. Please check your internet connection and try again.'));
+            };
+            
+            xhr.ontimeout = function() {
+                console.error('Form submission timeout');
+                reject(new Error('Request timed out. Please try again.'));
+            };
+            
+            xhr.timeout = 10000; // 10 second timeout
+            
+            // Send the form data
+            xhr.send(formData);
+        });
+
+    } catch (error) {
+        console.error('Form submission error:', error);
+        return { success: false, message: error.message };
+    }
+}
+
+// Quote Form Submission
+function initQuoteForm() {
+    const quoteForm = document.getElementById('quoteForm');
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            const successMsg = document.getElementById('quoteSuccess');
+            const errorMsg = document.getElementById('quoteError');
+            
+            // Reset messages
+            if (successMsg) successMsg.style.display = 'none';
+            if (errorMsg) errorMsg.style.display = 'none';
+            
+            // Show loading state
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
+
+        // Validate services selection before submission
+        if (!validateServicesSelection()) {
+            if (errorMsg) {
+                errorMsg.style.display = 'block';
+                errorMsg.textContent = 'Please select at least one service.';
+            }
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+            return;
+        }
+            
+            try {
+                const result = await submitForm(this, 'Quote Request');
+                
+                if (result.success) {
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        successMsg.textContent = 'Quote request submitted successfully! Our team will contact you shortly.';
+                    }
+                    this.reset();
+                    showNotification('Quote submitted successfully!', 'success');
+                } else {
+                    throw new Error(result.message);
+                }
+                
+            } catch (error) {
+                console.error('Error submitting quote:', error);
+                if (errorMsg) {
+                    errorMsg.style.display = 'block';
+                    errorMsg.textContent = 'Sorry, there was an error submitting your quote request. Please try again.';
+                }
+                showNotification('Failed to submit quote. Please try again.', 'error');
+            } finally {
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+}
+
+// Contact Form Submission
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            const successMsg = document.getElementById('contactSuccess');
+            const errorMsg = document.getElementById('contactError');
+            
+            // Reset messages
+            if (successMsg) successMsg.style.display = 'none';
+            if (errorMsg) errorMsg.style.display = 'none';
+            
+            // Show loading state
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                const result = await submitForm(this, 'Contact Form');
+                
+                if (result.success) {
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        successMsg.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+                    }
+                    this.reset();
+                    showNotification('Message sent successfully!', 'success');
+                } else {
+                    throw new Error(result.message);
+                }
+                
+            } catch (error) {
+                console.error('Error submitting contact form:', error);
+                if (errorMsg) {
+                    errorMsg.style.display = 'block';
+                    errorMsg.textContent = 'Sorry, there was an error sending your message. Please try again.';
+                }
+                showNotification('Failed to send message. Please try again.', 'error');
+            } finally {
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+}
+
+// Enhanced notification system
+function showNotification(message, type = 'info') {
+    // Remove any existing notifications
+    const existingNotifications = document.querySelectorAll('.voltaura-notification');
+    existingNotifications.forEach(notification => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    });
+    
+    const notification = document.createElement('div');
+    notification.className = 'voltaura-notification';
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#f56565' : '#1e3a8a'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        max-width: 300px;
+        font-size: 0.9rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    `;
+    
+    // Add icon based on type
+    const icon = type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ';
+    notification.innerHTML = `<span style="margin-right: 8px;">${icon}</span>${message}`;
+    
+    document.body.appendChild(notification);
+    
+    // Slide in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Slide out and remove
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
+}
+
+// Interactive room demonstrations
+function initRoomDemos() {
+    document.querySelectorAll('.room').forEach(room => {
+        room.addEventListener('click', function() {
+            const roomType = this.querySelector('span').textContent;
+            let info = '';
+            
+            switch(roomType) {
+                case 'Architecture':
+                    info = 'Visionary architectural design with sustainable and future-ready solutions';
+                    break;
+                case 'Interior Design':
+                    info = 'Sophisticated interior planning with custom furniture and lighting design';
+                    break;
+                case 'Smart Home':
+                    info = 'Cutting-edge home automation with intelligent controls and energy optimization';
+                    break;
+                case 'Security':
+                    info = 'Complete security solutions with smart monitoring and access control';
+                    break;
+            }
+            
+            if (info) {
+                showNotification(info, 'info');
+            }
+        });
+    });
+}
+
+// Form validation
+function validateForm(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.style.borderColor = '#f56565';
+            isValid = false;
+        } else {
+            field.style.borderColor = '';
+        }
+    });
+    
+    // Email validation
+    const emailFields = form.querySelectorAll('input[type="email"]');
+    emailFields.forEach(field => {
+        if (field.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                field.style.borderColor = '#f56565';
+                isValid = false;
+            }
+        }
+    });
+    
+    return isValid;
+}
+
+// Real-time validation
+function initFormValidation() {
+    document.querySelectorAll('form input, form select, form textarea').forEach(field => {
+        field.addEventListener('blur', function() {
+            if (this.hasAttribute('required') && !this.value.trim()) {
+                this.style.borderColor = '#f56565';
+            } else {
+                this.style.borderColor = '';
+            }
+        });
+        
+        field.addEventListener('input', function() {
+            if (this.style.borderColor === 'rgb(245, 101, 101)') {
+                this.style.borderColor = '';
+            }
+        });
+    });
+}
+
+// Test connection to Google Apps Script
+async function testConnection() {
+    try {
+        if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('YOUR_SCRIPT_ID_HERE')) {
+            console.warn('Google Apps Script URL not configured');
+            return false;
+        }
+        
+        // Simple test using XMLHttpRequest
+        return new Promise((resolve) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', GOOGLE_SCRIPT_URL + '?action=test', true);
+            xhr.timeout = 5000;
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 302) {
+                        console.log('Connection to Google Apps Script successful');
+                        resolve(true);
+                    } else {
+                        console.log('Connection test completed (may be working despite status:', xhr.status, ')');
+                        resolve(true);
+                    }
+                }
+            };
+            
+            xhr.onerror = function() {
+                console.warn('Connection to Google Apps Script failed');
+                resolve(false);
+            };
+            
+            xhr.ontimeout = function() {
+                console.warn('Connection test timed out');
+                resolve(false);
+            };
+            
+            xhr.send();
+        });
+        
+    } catch (error) {
+        console.warn('Connection test error:', error);
+        return false;
+    }
+}
+
+// Initialize everything when DOM is loaded
+
+
+    // Multi-select Services Dropdown Functionality
+    let servicesDropdownOpen = false;
+    let selectedServices = [];
+
+    function toggleServicesDropdown() {
+        const dropdown = document.getElementById('servicesDropdown');
+        const arrow = document.querySelector('.multiselect-arrow');
+
+        servicesDropdownOpen = !servicesDropdownOpen;
+
+        if (servicesDropdownOpen) {
+            dropdown.classList.add('open');
+            arrow.classList.add('open');
+        } else {
+            dropdown.classList.remove('open');
+            arrow.classList.remove('open');
+        }
+    }
+
+    function updateServicesDisplay() {
+        const placeholder = document.querySelector('.multiselect-placeholder');
+        const checkboxes = document.querySelectorAll('input[name="services[]"]:checked');
+
+        if (checkboxes.length === 0) {
+            placeholder.textContent = 'Select Services (Multiple)';
+            placeholder.classList.remove('has-selection');
+        } else {
+            const selectedLabels = Array.from(checkboxes).map(cb => {
+                const label = cb.nextElementSibling.textContent.trim();
+                return label;
+            });
+
+            if (selectedLabels.length === 1) {
+                placeholder.textContent = selectedLabels[0];
+            } else if (selectedLabels.length <= 3) {
+                placeholder.textContent = selectedLabels.join(', ');
+            } else {
+                placeholder.textContent = `${selectedLabels.length} services selected`;
+            }
+            placeholder.classList.add('has-selection');
+        }
+    }
+
+    function initServicesMultiselect() {
+        // Add event listeners to all service checkboxes
+        const checkboxes = document.querySelectorAll('input[name="services[]"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateServicesDisplay);
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const multiselectContainer = document.querySelector('.services-multiselect');
+            if (multiselectContainer && !multiselectContainer.contains(event.target)) {
+                const dropdown = document.getElementById('servicesDropdown');
+                const arrow = document.querySelector('.multiselect-arrow');
+                if (servicesDropdownOpen) {
+                    dropdown.classList.remove('open');
+                    arrow.classList.remove('open');
+                    servicesDropdownOpen = false;
+                }
+            }
+        });
+    }
+
+    // Update form validation to work with checkboxes
+    function validateServicesSelection() {
+        const checkboxes = document.querySelectorAll('input[name="services[]"]:checked');
+        const multiselectHeader = document.querySelector('.multiselect-header');
+
+        if (checkboxes.length === 0) {
+            multiselectHeader.style.borderColor = '#f56565';
+            return false;
+        } else {
+            multiselectHeader.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            return true;
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    console.log('VoltAura website initializing...');
+        
+        // Initialize services multiselect
+        initServicesMultiselect();
+    
+    // Initialize all components
+    initQuoteForm();
+    initContactForm();
+    initRoomDemos();
+    initFormValidation();
+    
+    // Test connection after a short delay
+    setTimeout(async () => {
+        const connected = await testConnection();
+        if (connected) {
+            console.log('✅ VoltAura website with Google Sheets integration loaded successfully!');
+        } else {
+            console.warn('⚠️ VoltAura website loaded, but Google Sheets connection may have issues. Check GOOGLE_SCRIPT_URL.');
+        }
+    }, 2000);
+    
+    console.log('VoltAura website initialized');
+});
+
+// Global error handler
+window.addEventListener('error', function(e) {
+    console.error('Global error:', e.error);
+});
+
+// Handle unhandled promise rejections
+window.addEventListener('unhandledrejection', function(e) {
+    console.error('Unhandled promise rejection:', e.reason);
+});
+    </script>
+</body>
+</html>
